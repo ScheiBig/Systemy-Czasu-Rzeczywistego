@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <unistd.h>
 #include <signal.h>
+#include <unistd.h>
 
 #include "logger.h"
 
@@ -27,8 +27,8 @@ int main()
     }
 
     log_deinit();
+    
     printf("Waiting...");
-
     getchar();
 
     return 0;
