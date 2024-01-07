@@ -115,16 +115,16 @@ int main(int argc, char const *argv[])
         fprintf(stderr,
             "\033[0;31m"
             "Unknown value for dump_ord: %s\n\n"
-            "\33[0m"
-            , argv[2]);
+            "\33[0m", 
+            argv[2]);
         usage(argv[0]);
         return 1;
     }
     fprintf(stderr,
         "\033[0;31m"
         "Unknown command: %s!\n\n"
-        "\33[0m"
-        , argv[1]);
+        "\33[0m",
+        argv[1]);
     usage(argv[0]);
 
     return 1;
@@ -134,17 +134,20 @@ void usage(const char* _cmd)
 {
     fprintf(stderr, "Usage %s <command> <arg> <pid>\n", _cmd);
     fprintf(stderr, "------------------------\n");
-    fprintf(stderr, "Commands are:\n"
+    fprintf(stderr, 
+        "Commands are:\n"
         "    log_lvl\n"
         "    dump_order\n"
     );
-    fprintf(stderr, "For log_lvl, args are:\n"
+    fprintf(stderr, 
+        "For log_lvl, args are:\n"
         "    off\n"
         "    min\n"
         "    std\n"
         "    max\n"
     );
-    fprintf(stderr, "For dump_ord, args are:\n"
+    fprintf(stderr, 
+        "For dump_ord, args are:\n"
         "    [norm] (can be omitted)\n"
         "    detl\n"
         "    extd\n"
