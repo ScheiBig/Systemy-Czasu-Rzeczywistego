@@ -220,7 +220,7 @@ log_res_e log_init(const char* _path)
 }
 
 
-log_res_e log_deinit()
+log_res_e log_deinit(void)
 {
     if (EBUSY == pthread_mutex_trylock(&__init_mux)
         || __init_ready == false)
@@ -279,7 +279,7 @@ log_res_e log_printf(log_lvl_e _lvl, const char* _format, ...)
         sprintf(head, "[STD @ ");
         break;
     case LOG_LVL_MAX:
-        sprintf(head, "[MIN @ ");
+        sprintf(head, "[MAX @ ");
         break;
     default: break;
     }
@@ -490,7 +490,6 @@ void* __dump_thread(void* _)
                 log_printf(LOG_LVL_MIN, "Created DUMP file using command: `cat /proc/[PID]/maps`");
             }
         }
-        fprintf(stderr, "[%s]\n", command);
         free(command);
     }
     return NULL;

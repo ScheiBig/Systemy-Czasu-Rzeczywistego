@@ -137,7 +137,7 @@ void usage(const char* _cmd)
     fprintf(stderr, 
         "Commands are:\n"
         "    log_lvl\n"
-        "    dump_order\n"
+        "    dump_ord\n"
     );
     fprintf(stderr, 
         "For log_lvl, args are:\n"
